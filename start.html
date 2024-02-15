@@ -19,9 +19,9 @@
     <body>
         <center>
             <h1> MyBingo- Your Ultimate Bingo Companion!</h1>
-        <table border="1" border-color="black" cellpadding="5" cellspacing="5" id="abc">
+        <table name="Ishija" border="1" border-color="black" cellpadding="5" cellspacing="5" id="abc">
             <tr><td class="cell">1</td>
-                <td id="cde">2</td>
+                <td id="cde" >2</td>
                 <td>3</td>
                 <td>4</td>
                 <td>5</td>
@@ -77,8 +77,13 @@
             </tr>
         </table>
         <script>
-           
-            document.getElementById("cde").addEventListener("click", function(){alert("1 is eliminated;")});
+           var td = document.getElementsByTagName("td");
+
+        for (var i = 0; i < td.length; i++) {
+            td[i].onclick = function() {
+           this.style.textDecoration="line-through";
+           }
+           }
         </script>
         </center>
     </body>
