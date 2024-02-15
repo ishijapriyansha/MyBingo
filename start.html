@@ -15,6 +15,11 @@
         td{
             text-align: center;
         }
+        
+    .crossit
+   {
+   background-image: linear-gradient(to bottom right,  transparent calc(50% - 1px), red, transparent calc(50% + 1px)); 
+   }
     </style>
     <body>
         <center>
@@ -81,6 +86,7 @@
         for (var i = 0; i < td.length; i++) {
             td[i].onclick = function() {
            this.style.textDecoration="line-through";
+           this.classList.add('crossit');
            }
            }
         </script>
