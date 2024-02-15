@@ -10,7 +10,7 @@
             padding:20px;
         }
         h1{
-            margin-top:50px;
+            margin-top:10px;
         }
         td{
             text-align: center;
@@ -19,7 +19,7 @@
     <body>
         <center>
             <h1> MyBingo- Your Ultimate Bingo Companion!</h1>
-        <table name="Ishija" border="1" border-color="black" cellpadding="5" cellspacing="5" id="abc">
+        <table border="1" border-color="black" cellpadding="5" cellspacing="5">
             <tr><td class="cell">1</td>
                 <td id="cde" >2</td>
                 <td>3</td>
@@ -77,8 +77,7 @@
             </tr>
         </table>
         <script>
-           var td = document.getElementsByTagName("td");
-
+        var td = document.getElementsByTagName("td");
         for (var i = 0; i < td.length; i++) {
             td[i].onclick = function() {
            this.style.textDecoration="line-through";
