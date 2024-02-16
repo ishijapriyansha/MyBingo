@@ -17,8 +17,13 @@
         
     .crossit
    {
-   background-image: linear-gradient(to bottom right,  transparent calc(50% - 1px), black, transparent calc(50% + 1px)); 
+    background-image: linear-gradient(to bottom right, transparent calc(50% - 1px), black, transparent calc(50% + 1px)),
+                      linear-gradient(to bottom left, transparent calc(50% - 1px), black, transparent calc(50% + 1px));
+ 
+
+  
    }
+   
     </style>
     <body>
         <center>
@@ -26,20 +31,11 @@
             <form name="number1">
                 <label> Enter First Number!</label>
                 <input type="number" max="50" min="1" id="n1">
-                <button type="submit"> Add</button><br> <br>
+                <button type="submit" onclick="added1();"> Add</button><br> <br>
                 <label> Enter Second Number! </label>
                 <input type="number" max="50" min="1" id="n2">
-                <button type="submit"> Add </button><br> <br>
+                <button type="submit" onclick="added2()"> Add </button><br> <br>
             </form>
-
-
-
-
-
-
-
-
-
 
 
         <table border="1" border-color="black" cellpadding="5" cellspacing="5">
@@ -106,6 +102,14 @@
            this.classList.add('crossit');
            }
            }
+         function added1(){
+            alert(document.getElementById("n1").value);
+         }
+         function added2(){
+            alert(document.getElementById("n2").value);
+         }
+         
+           
         </script>
         </center>
     </body>
