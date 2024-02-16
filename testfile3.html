@@ -27,12 +27,12 @@
         <center>
             <h1> MyBingo- Your Ultimate Bingo Companion!</h1>
             <form name="number1">
-                <label> Enter First Number!</label>
-                <input type="number" max="50" min="1" id="n1">
-                <button type="submit" onclick="added1();"> Add</button><br> <br>
-                <label> Enter Second Number! </label>
-                <input type="number" max="50" min="1" id="n2">
-                <button type="submit" onclick="added2()"> Add </button><br> <br>
+                <label> Player A's Number!</label>
+                <input type="password" size="2" max="50" min="1" id="n1">
+                <button type="submit" onclick="added1(); return false;"> Add</button><br> <br>
+                <label> Player B's Number! </label>
+                <input type="password" size="2" max="50" min="1" id="n2">
+                <button type="submit" onclick="added2(); return false;"> Add </button><br> <br>
             </form>
 
 
@@ -96,25 +96,53 @@
         <script>
             var v1,v2,v3;
           var td = document.getElementsByTagName("td");
+
+          function added1(){
+            v1=document.getElementById("n1").value;
+            console.log(v1);
+         }
+         function added2(){
+            v2=document.getElementById("n2").value;
+            console.log(v2);
+         }
+
         for (var i = 0; i < td.length; i++) {
             td[i].onclick = function() {
            this.classList.add('crossit');
             v3 = this.innerHTML;
            console.log(v3);
+           if(v3==v1){alert("1st player eliminated. Player B wins")};
+           if(v3==v2){alert("2nd player eliminated. Player A wins!!")};
            }
            }
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
          function added1(){
             v1=document.getElementById("n1").value;
-            alert(v1);
-            
+            console.log(v1);
          }
          function added2(){
             v2=document.getElementById("n2").value;
-            alert(v2);
-
-         }
-         if(v1=v3){
-            console.log("true");
+            console.log(v2);
          }
         </script>
         </center>
