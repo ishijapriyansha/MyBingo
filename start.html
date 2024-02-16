@@ -24,6 +24,21 @@
     <body>
         <center>
             <h1> MyBingo- Your Ultimate Bingo Companion!</h1>
+            <form name="number1">
+                <label> Enter Your Number!</label>
+                <input type="number" max="50" min="1">
+            </form>
+
+
+
+
+
+
+
+
+
+
+
         <table border="1" border-color="black" cellpadding="5" cellspacing="5">
             <tr><td class="cell">1</td>
                 <td id="cde" >2</td>
@@ -85,7 +100,6 @@
         var td = document.getElementsByTagName("td");
         for (var i = 0; i < td.length; i++) {
             td[i].onclick = function() {
-           
            this.classList.add('crossit');
            }
            }
