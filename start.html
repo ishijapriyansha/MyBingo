@@ -18,7 +18,7 @@
         
     .crossit
    {
-   background-image: linear-gradient(to bottom right,  transparent calc(50% - 1px), red, transparent calc(50% + 1px)); 
+   background-image: linear-gradient(to bottom right,  transparent calc(50% - 1px), black, transparent calc(50% + 1px)); 
    }
     </style>
     <body>
@@ -85,7 +85,7 @@
         var td = document.getElementsByTagName("td");
         for (var i = 0; i < td.length; i++) {
             td[i].onclick = function() {
-           this.style.textDecoration="line-through";
+           
            this.classList.add('crossit');
            }
            }
