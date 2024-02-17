@@ -32,6 +32,10 @@
         body{
             background-color: #2DDFFF;
         }
+        .heading{
+            width:629px;
+            display: inline;
+        }
         
     .crossit
    {
@@ -40,18 +44,20 @@
  
    }
    
+
+   
     </style>
     <body>
         <button type="submit" id="btn" onclick="darkm()"> Dark Mode On</button>
         <center>
-            <h1> MyBingo- Your Ultimate Bingo Companion!</h1>
+            <div class="heading"><h1> MyBingo- Your Ultimate Bingo Companion!</h1></div>
             <form name="number1">
                 <label> Player A's Number!</label>
                 <input type="password" size="2" max="50" min="1" id="n1">
-                <button type="submit" onclick="added1(); return false;"> Add</button><br> <br>
+                <button type="submit" onclick="added1(); return false;" id="addit1"> Add</button><br> <br>
                 <label> Player B's Number! </label>
-                <input type="password" size="2" max="50" min="1" id="n2">
-                <button type="submit" onclick="added2(); return false;"> Add </button><br> <br>
+                <input type="password" size="2" max="50" min="1" id="n2" >
+                <button type="submit" onclick="added2(); return false;" id="addit2"> Add </button><br> <br>
             </form>
 
 
@@ -138,10 +144,12 @@
          function added1(){
             v1=document.getElementById("n1").value;
             console.log(v1);
+             document.getElementById("addit1").innerHTML="Added!";
          }
          function added2(){
             v2=document.getElementById("n2").value;
             console.log(v2);
+            document.getElementById("addit2").innerHTML="Added!";
          }
          function darkm(){
             window.location.replace("testcss.html");
