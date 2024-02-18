@@ -52,12 +52,14 @@
         <center>
             <h1> MyBingo- Your Ultimate Bingo Companion!</h1>
             <form name="number1">
+                <div id="player1">
                 <label> Player A's Number!</label>
-                <input type="password" size="2" max="50" min="1" id="n1">
-                <button type="submit" onclick="added1(); return false;" id="addit1"> Add</button><br> <br>
+                <input type="text" size="2" max="50" min="1" id="n1">
+                <button type="submit" onclick="added1(); return false;" id="addit1"> Add</button><br> <br></div>
+                <div id="player2">
                 <label> Player B's Number! </label>
-                <input type="password" size="2" max="50" min="1" id="n2" >
-                <button type="submit" onclick="added2(); return false;" id="addit2"> Add </button><br> <br>
+                <input type="text" size="2" max="50" min="1" id="n2">
+                <button type="submit" onclick="added2(); return false;" id="addit2"> Add </button><br> <br></div>
             </form>
 
 
@@ -125,12 +127,10 @@
           function added1(){
             v1=document.getElementById("n1").value;
             console.log(v1);
-             document.getElementById("addit1").innerHTML="Added!";
          }
          function added2(){
             v2=document.getElementById("n2").value;
             console.log(v2);
-            document.getElementById("addit2").innerHTML="Added!";
          }
 
         for (var i = 0; i < td.length; i++) {
@@ -146,10 +146,14 @@
          function added1(){
             v1=document.getElementById("n1").value;
             console.log(v1);
+            document.getElementById("addit1").innerHTML="Added!";
+            document.getElementById("player1").innerHTML="Player 1 has chosen a number!";
          }
          function added2(){
             v2=document.getElementById("n2").value;
             console.log(v2);
+            document.getElementById("addit2").innerHTML="Added!";
+            document.getElementById("player2").innerHTML="Player 2 has chosen a number!";
          }
          function darkm(){
             window.location.replace("mainfile3.html");}
