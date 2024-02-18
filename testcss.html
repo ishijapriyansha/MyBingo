@@ -54,11 +54,11 @@
             <form name="number1">
                 <div id="player1">
                 <label> Player A's Number!</label>
-                <input type="text" size="2" max="50" min="1" id="n1">
+                <input type="password" size="2" max="50" min="1" id="n1">
                 <button type="submit" onclick="added1(); return false;" id="addit1"> Add</button><br> <br></div>
                 <div id="player2">
                 <label> Player B's Number! </label>
-                <input type="text" size="2" max="50" min="1" id="n2">
+                <input type="password" size="2" max="50" min="1" id="n2">
                 <button type="submit" onclick="added2(); return false;" id="addit2"> Add </button><br> <br></div>
             </form>
 
@@ -136,6 +136,8 @@
         for (var i = 0; i < td.length; i++) {
             td[i].onclick = function() {
            this.classList.add('crossit');
+           var audio = new Audio("mixkit-small-hit-in-a-game-2072.wav");
+           audio.play();
             v3 = this.innerHTML;
            console.log(v3);
            if(v3==v1){alert("1st player eliminated. Player B wins")};
@@ -148,12 +150,16 @@
             console.log(v1);
             document.getElementById("addit1").innerHTML="Added!";
             document.getElementById("player1").innerHTML="Player 1 has chosen a number!";
+            var audio = new Audio("./assests-mybingo/pop-up-something-160353.mp3");
+             audio.play();
          }
          function added2(){
             v2=document.getElementById("n2").value;
             console.log(v2);
             document.getElementById("addit2").innerHTML="Added!";
             document.getElementById("player2").innerHTML="Player 2 has chosen a number!";
+            var audio = new Audio("./assests-mybingo/pop-up-something-160353.mp3");
+             audio.play();
          }
          function darkm(){
             window.location.replace("mainfile3.html");}

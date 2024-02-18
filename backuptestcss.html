@@ -1,0 +1,160 @@
+<html>
+    <head>
+        <title> MyBingo</title>
+    </head>
+    <style>
+        table{
+            height: 430px;
+            width:900px;
+            padding:15px;
+            background-color: #228B22;
+            border-radius: 20px;
+            border-style: solid;
+            border-color: black;
+            border-width: 5px;
+        }
+        form{
+            height:60px;
+            color:#228B22;
+        }
+    
+        button{
+            background-color: forestgreen;
+            color:black;
+        }
+        
+        h1{
+            margin-top:10px;
+            color:#228B22;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        td{
+            text-align: center;
+            background-color:black;
+            border-radius: 15px;
+            color:white;
+        }
+    
+        body{
+            background-color: black;
+        }
+        
+    .crossit
+   {
+    background-image: linear-gradient(to bottom right, transparent calc(50% - 2px), green, transparent calc(50% + 2px)),
+                      linear-gradient(to bottom left, transparent calc(50% - 2px), green, transparent calc(50% + 2px));
+ 
+   }
+   
+    </style>
+    <body>
+        <button type="submit" id="btn" onclick="darkm()"> Dark Mode Off</button>
+        <center>
+            <h1> MyBingo- Your Ultimate Bingo Companion!</h1>
+            <form name="number1">
+                <label> Player A's Number!</label>
+                <input type="password" size="2" max="50" min="1" id="n1">
+                <button type="submit" onclick="added1(); return false;" id="addit1"> Add</button><br> <br>
+                <label> Player B's Number! </label>
+                <input type="password" size="2" max="50" min="1" id="n2">
+                <button type="submit" onclick="added2(); return false;" id="addit2"> Add </button><br> <br>
+            </form>
+
+
+        <table border="1" border-color="black" cellpadding="5" cellspacing="5">
+            <tr><td class="cell">1</td>
+                <td id="cde" >2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+            </tr>
+            <tr><td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+            </tr>
+            <tr><td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+            </tr>
+            <tr><td>31</td>
+                <td>32</td>
+                <td>33</td>
+                <td>34</td>
+                <td>35</td>
+                <td>36</td>
+                <td>37</td>
+                <td>38</td>
+                <td>39</td>
+                <td>40</td>
+            </tr>
+            <tr><td>41</td>
+                <td>42</td>
+                <td>43</td>
+                <td>44</td>
+                <td>45</td>
+                <td>46</td>
+                <td>47</td>
+                <td>48</td>
+                <td>49</td>
+                <td>50</td>
+            </tr>
+        </table>
+        <script>
+            var v1,v2,v3;
+          var td = document.getElementsByTagName("td");
+
+          function added1(){
+            v1=document.getElementById("n1").value;
+            console.log(v1);
+         }
+         function added2(){
+            v2=document.getElementById("n2").value;
+            console.log(v2);
+         }
+
+        for (var i = 0; i < td.length; i++) {
+            td[i].onclick = function() {
+           this.classList.add('crossit');
+            v3 = this.innerHTML;
+           console.log(v3);
+           if(v3==v1){alert("1st player eliminated. Player B wins")};
+           if(v3==v2){alert("2nd player eliminated. Player A wins!!")};
+           }
+           }
+         
+         function added1(){
+            v1=document.getElementById("n1").value;
+            console.log(v1);
+            document.getElementById("addit1").innerHTML="Added!";
+         }
+         function added2(){
+            v2=document.getElementById("n2").value;
+            console.log(v2);
+            document.getElementById("addit2").innerHTML="Added!";
+         }
+         function darkm(){
+            window.location.replace("mainfile3.html");}
+        </script>
+        </center>
+        
+    </body>
+</html>

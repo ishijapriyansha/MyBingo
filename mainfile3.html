@@ -52,12 +52,14 @@
         <center>
             <div class="heading"><h1> MyBingo- Your Ultimate Bingo Companion!</h1></div>
             <form name="number1">
+                <div id="player1">
                 <label> Player A's Number!</label>
                 <input type="password" size="2" max="50" min="1" id="n1">
-                <button type="submit" onclick="added1(); return false;" id="addit1"> Add</button><br> <br>
+                <button type="submit" onclick="added1(); return false;" id="addit1"> Add</button><br> <br></div>
+                <div id="player2">
                 <label> Player B's Number! </label>
                 <input type="password" size="2" max="50" min="1" id="n2" >
-                <button type="submit" onclick="added2(); return false;" id="addit2"> Add </button><br> <br>
+                <button type="submit" onclick="added2(); return false;" id="addit2"> Add </button><br> <br></div>
             </form>
 
 
@@ -134,6 +136,8 @@
         for (var i = 0; i < td.length; i++) {
             td[i].onclick = function() {
            this.classList.add('crossit');
+           var audio = new Audio("mixkit-game-ball-tap-2073.wav");
+           audio.play();
             v3 = this.innerHTML;
            console.log(v3);
            if(v3==v1){alert("1st player eliminated. Player B wins")};
@@ -145,11 +149,17 @@
             v1=document.getElementById("n1").value;
             console.log(v1);
              document.getElementById("addit1").innerHTML="Added!";
+             document.getElementById("player1").innerHTML="Player 1 has chosen a number!";
+             var audio = new Audio("./assests-mybingo/mixkit-player-jumping-in-a-video-game-2043.wav");
+             audio.play();
          }
          function added2(){
             v2=document.getElementById("n2").value;
             console.log(v2);
             document.getElementById("addit2").innerHTML="Added!";
+            document.getElementById("player2").innerHTML="Player 2 has chosen a number!";
+            var audio = new Audio("./assests-mybingo/mixkit-player-jumping-in-a-video-game-2043.wav");
+             audio.play();
          }
          function darkm(){
             window.location.replace("testcss.html");
