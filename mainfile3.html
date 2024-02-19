@@ -136,12 +136,12 @@
         for (var i = 0; i < td.length; i++) {
             td[i].onclick = function() {
            this.classList.add('crossit');
-           var audio = new Audio("mixkit-game-ball-tap-2073.wav");
+           var audio = new Audio("./assests-mybingo/mixkit-game-ball-tap-2073.wav");
            audio.play();
             v3 = this.innerHTML;
            console.log(v3);
-           if(v3==v1){alert("1st player eliminated. Player B wins")};
-           if(v3==v2){alert("2nd player eliminated. Player A wins!!")};
+           if(v3==v1){alert("Player 2 wins")};
+           if(v3==v2){alert("Player 1 wins!!")};
            }
            }
          
