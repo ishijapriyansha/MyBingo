@@ -7,7 +7,7 @@
             height: 430px;
             width:900px;
             padding:15px;
-            background-color: #228B22;
+            background-color: #ff347f;
             border-radius: 20px;
             border-style: solid;
             border-color: black;
@@ -15,52 +15,52 @@
         }
         form{
             height:60px;
-            color:#228B22;
         }
     
-        button{
-            background-color: forestgreen;
-            color:black;
-        }
-        
         h1{
-            margin-top:10px;
-            color:#228B22;
+            margin-top:1px;
+            color: black;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            
         }
         td{
             text-align: center;
-            background-color:black;
+            background-color:lightsalmon;
             border-radius: 15px;
-            color:white;
         }
     
         body{
-            background-color: black;
+            background-color: #2DDFFF;
+        }
+        .heading{
+            width:629px;
+            display: inline;
         }
         
     .crossit
    {
-    background-image: linear-gradient(to bottom right, transparent calc(50% - 2px), green, transparent calc(50% + 2px)),
-                      linear-gradient(to bottom left, transparent calc(50% - 2px), green, transparent calc(50% + 2px));
+    background-image: linear-gradient(to bottom right, transparent calc(50% - 1px), black, transparent calc(50% + 1px)),
+                      linear-gradient(to bottom left, transparent calc(50% - 1px), black, transparent calc(50% + 1px));
  
    }
    
     </style>
     <body>
-        <button type="submit" id="btn" onclick="darkm()"> Dark Mode Off</button>
+        <button type="submit" id="btn" onclick="darkm()"> Dark Mode On</button>
         <center>
-            <h1> MyBingo- Your Ultimate Bingo Companion!</h1>
+            <div class="heading"><h1> MyBingo- Your Ultimate Bingo Companion!</h1></div>
             <form name="number1">
+                <div id="player1">
                 <label> Player A's Number!</label>
                 <input type="password" size="2" max="50" min="1" id="n1">
-                <button type="submit" onclick="added1(); return false;" id="addit1"> Add</button><br> <br>
+                <button type="submit" onclick="added1(); return false;" id="addit1"> Add</button><br> <br></div>
+                <div id="player2">
                 <label> Player B's Number! </label>
-                <input type="password" size="2" max="50" min="1" id="n2">
-                <button type="submit" onclick="added2(); return false;" id="addit2"> Add </button><br> <br>
+                <input type="password" size="2" max="50" min="1" id="n2" >
+                <button type="submit" onclick="added2(); return false;" id="addit2"> Add </button><br> <br></div>
             </form>
 
-
+            <div id="player-turn">Player 1 strikes a number</div>
         <table border="1" border-color="black" cellpadding="5" cellspacing="5">
             <tr><td class="cell">1</td>
                 <td id="cde" >2</td>
@@ -130,29 +130,74 @@
             v2=document.getElementById("n2").value;
             console.log(v2);
          }
-
-        for (var i = 0; i < td.length; i++) {
+         
+         let isFunction1 = true;
+          function f1(){
+         for (var i = 0; i < td.length; i++) {
             td[i].onclick = function() {
            this.classList.add('crossit');
+           var audio = new Audio("./assests-mybingo/mixkit-game-ball-tap-2073.wav");
+           audio.play();
             v3 = this.innerHTML;
            console.log(v3);
-           if(v3==v1){alert("1st player eliminated. Player B wins")};
-           if(v3==v2){alert("2nd player eliminated. Player A wins!!")};
+           if(v3==v1){alert("Player 2 wins")};
+           if(v3==v2){alert("Player 1 wins!!")};
+           if(document.getElementById("player-turn").innerHTML="Player 1 strikes a number"){
+           document.getElementById("player-turn").innerHTML="Player 2 strikes a number";
+           console.log("here1");
+           isFunction=!isFunction;
            }
+           }}}
+          function f2(){
+            for (var i = 0; i < td.length; i++) {
+            td[i].onclick = function() {
+           this.classList.add('crossit');
+           var audio = new Audio("./assests-mybingo/mixkit-game-ball-tap-2073.wav");
+           audio.play();
+            v3 = this.innerHTML;
+           console.log(v3);
+           if(v3==v1){alert("Player 2 wins")};
+           if(v3==v2){alert("Player 1 wins!!")};
+           if(document.getElementById("player-turn").innerHTML="Player 2 strikes a number"){
+           document.getElementById("player-turn").innerHTML="Player 1 strikes a number";
+           console.log("here2");
+           isFunction=!isFunction;
            }
-         
+           }}
+          }
+          
+          
+
+// Function to toggle between the two functions
+function toggleFunctions() {
+    if (isFunction1) {
+        f1.call(this);
+    } else {
+        f2.call(this);
+    }
+    // Toggle the state variable
+    isFunction1 = !isFunction1;
+}
+          
          function added1(){
             v1=document.getElementById("n1").value;
             console.log(v1);
-            document.getElementById("addit1").innerHTML="Added!";
+             document.getElementById("addit1").innerHTML="Added!";
+             document.getElementById("player1").innerHTML="Player 1 has chosen a number!";
+             var audio = new Audio("./assests-mybingo/mixkit-player-jumping-in-a-video-game-2043.wav");
+             audio.play();
          }
          function added2(){
             v2=document.getElementById("n2").value;
             console.log(v2);
             document.getElementById("addit2").innerHTML="Added!";
+            document.getElementById("player2").innerHTML="Player 2 has chosen a number!";
+            var audio = new Audio("./assests-mybingo/mixkit-player-jumping-in-a-video-game-2043.wav");
+             audio.play();
          }
          function darkm(){
-            window.location.replace("mainfile3.html");}
+            window.location.replace("testcss.html");
+         }
         </script>
         </center>
         

@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Homepage</title>
+    </head>
+    <body>
+        <div id="player-names">
+            <form id="players">
+        <p>Welcome to MyBingo!</p>
+        <p> Enter Your Names</p>
+        <label> Enter the name of player 1</label>
+        <input type="text" id="p1"> 
+        <button type="submit" onclick="added1(); return false;" id="addit1"> Add</button><br> <br>
+        <label> Enter the name of player 2</label>
+        <input type="text" id="p2"> 
+        <button type="submit" onclick="added2(); return false;" id="addit2"> Add</button><br> <br>
+        </div>
+        <script>
+        function added1(){
+            g1=document.getElementById("p1").value;
+            console.log(g1);
+         }
+         function added2(){
+            g2=document.getElementById("p2").value;
+            console.log(g2);
+         }
+         </script>
+
+    
+    </body>
+</html>
