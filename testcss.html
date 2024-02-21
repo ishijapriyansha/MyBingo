@@ -45,6 +45,9 @@
                       linear-gradient(to bottom left, transparent calc(50% - 2px), green, transparent calc(50% + 2px));
  
    }
+   #player-turn{
+    color:forestgreen;
+   }
    
     </style>
     <body>
@@ -62,8 +65,9 @@
                 <button type="submit" onclick="added2(); return false;" id="addit2"> Add </button><br> <br></div>
             </form>
 
-
-        <table border="1" border-color="black" cellpadding="5" cellspacing="5">
+            <div id="player-turn">Player 1 strikes a number</div>
+           
+        <table border="1" border-color="black" cellpadding="5" cellspacing="5" id="myTable">
             <tr><td class="cell">1</td>
                 <td id="cde" >2</td>
                 <td>3</td>
@@ -133,6 +137,22 @@
             console.log(v2);
          }
 
+         function toggleFunctions() {
+          if (isFunction1) {
+          f1();
+          }else {
+          f2();
+          }}
+          let isFunction1 = true;
+         
+          var tdElements = document.querySelectorAll('#myTable td');
+          tdElements.forEach(function(td){
+            td.addEventListener('click', function(){
+                toggleFunctions();
+            })
+          })
+
+          function f1(){
         for (var i = 0; i < td.length; i++) {
             td[i].onclick = function() {
            this.classList.add('crossit');
@@ -143,15 +163,38 @@
            if(v3==v1){
             var audio = new Audio("./assests-mybingo/collect-5930.mp3");
              audio.play();
-            alert("Player 2 wins");
-            }
-
+            alert("Player 2 wins");}
            if(v3==v2){
             var audio = new Audio("./assests-mybingo/collect-5930.mp3");
             audio.play();
-            alert("Player 1 wins!!");
-           }}}
+            alert("Player 1 wins!!");}
+            if(document.getElementById("player-turn").innerHTML="Player 1 strikes a number"){
+           document.getElementById("player-turn").innerHTML="Player 2 strikes a number";
+           console.log("here1");
+           isFunction1=false;
+           }}}}
          
+           function f2(){
+        for (var i = 0; i < td.length; i++) {
+            td[i].onclick = function() {
+           this.classList.add('crossit');
+           var audio = new Audio("./assests-mybingo/mixkit-small-hit-in-a-game-2072.wav");
+           audio.play();
+            v3 = this.innerHTML;
+           console.log(v3);
+           if(v3==v1){
+            var audio = new Audio("./assests-mybingo/collect-5930.mp3");
+             audio.play();
+            alert("Player 2 wins");}
+           if(v3==v2){
+            var audio = new Audio("./assests-mybingo/collect-5930.mp3");
+            audio.play();
+            alert("Player 1 wins!!");}
+            if(document.getElementById("player-turn").innerHTML="Player 2 strikes a number"){
+           document.getElementById("player-turn").innerHTML="Player 1 strikes a number";
+           console.log("here2");
+           isFunction1=true;
+           }}}}
          function added1(){
             v1=document.getElementById("n1").value;
             console.log(v1);
